@@ -2,7 +2,8 @@ import { IconButton, ListItem, ListItemText } from "@mui/material";
 import moment from "moment";
 import { useContext } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
+import EditIcon from '@mui/icons-material/Edit';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "../firebase";
 import { TodoContext } from "../pages/TodoContext";
@@ -15,23 +16,26 @@ const Todo = ({ id, title, detail, timestamp }) => {
     e.stopPropagation();
     const docRef = doc(db, "todos", id);
     await deleteDoc(docRef);
-    showAlert("error", `Todo with id ${id} deleted successfully`);
+    showAlert("error", `Todo ${title} deleted successfully`);
   };
   const seeMore = (id, e) => {
     e.stopPropagation();
     router.push(`/todos/${id}`);
   }
   return (
-    <ListItem onClick={() => setTodo({ id, title, detail, timestamp })}
+    <ListItem 
       sx={{ mt: 3, boxShadow: 3 }}
       style={{ backgroundColor: "#FAFAFA" }}
       secondaryAction={
         <>
+          <IconButton onClick={() => setTodo({ id, title, detail, timestamp })}>
+            <EditIcon />
+          </IconButton>
           <IconButton onClick={(e) => deleteTodo(id, e)}>
             <DeleteIcon />
           </IconButton>
           <IconButton onClick={(e) => seeMore(id, e)}>
-            <MoreVertIcon />
+            <NavigateNextIcon />
           </IconButton>
         </>
       }

@@ -15,6 +15,8 @@ const Login = ({type, color}) => {
         alignItems="center"
         justifyContent="center"
         style={{ minHeight: '100vh' }}>
+          <h1>TODO APP</h1>
+          <h2> SIGN IN TO TODO APP </h2>
           <Button variant='contained' startIcon={<GoogleIcon/ >} onClick={loginWithGoogle}> SIGN IN GOOGLE</Button>
 
     </Grid>

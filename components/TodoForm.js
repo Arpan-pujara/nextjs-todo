@@ -22,7 +22,7 @@ const TodoForm = () => {
       const todoUpdated = { ...todo, timestamp: serverTimestamp() };
       updateDoc(docRef, todoUpdated);
       setTodo({ title: "", detail: "" });
-      showAlert("info", `Todo with id ${todo.id} updated successfully`);
+      showAlert("info", `New Todo  ${todo.title} updated successfully`);
     } else {
       const collectionRef = collection(db, "todos");
       const docRef = await addDoc(collectionRef, {
@@ -31,7 +31,7 @@ const TodoForm = () => {
         timestamp: serverTimestamp(),
       });
       setTodo({ title: "", detail: "" });
-      showAlert("success", `Todo with id ${docRef.id} is added successfully`);
+      showAlert("success", `New Todo ${todo.title} is added successfully`);
     }
   };
 

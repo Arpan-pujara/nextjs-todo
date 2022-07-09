@@ -17,6 +17,7 @@ export default function Home({ todosProps }) {
   const [alertMessage, setAlertMessage] = useState("");
   const [todo, setTodo] = useState({ title: "", detail: "" });
 
+  // show some good attractive alerts
   const showAlert = (type, msg) => {
     setAlertType(type);
     setAlertMessage(msg);
@@ -53,6 +54,7 @@ export default function Home({ todosProps }) {
   );
 }
 
+// getting server side props fast loading
 export const getServerSideProps = async(context) => {
   try {
     const cookies = nookies.get(context)
