@@ -3,7 +3,7 @@ import { Container } from "@mui/system";
 import { useState } from "react";
 import TodoForm from "../components/TodoForm";
 import TodoList from "../components/TodoList";
-import { TodoContext } from "./TodoContext";
+import { TodoContext } from "../components/TodoContext";
 import { useAuth } from "../Auth";
 import { auth, db } from "../firebase";
 import { verifyIdToken } from "../firebaseAdmin";

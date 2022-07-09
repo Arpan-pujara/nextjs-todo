@@ -6,7 +6,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { deleteDoc, doc } from "firebase/firestore";
 import { db } from "../firebase";
-import { TodoContext } from "../pages/TodoContext";
+import { TodoContext } from "./TodoContext";
 import { useRouter } from "next/router";
 
 const Todo = ({ id, title, detail, timestamp }) => {
